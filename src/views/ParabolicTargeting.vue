@@ -29,17 +29,27 @@
         document.getElementById("target").style.top = targetYPosPercent + "%"
 
         //fires projectile at target in a ballistic arc
-        let projectileX = parseFloat(document.getElementById("projectile").style.left.slice(0, -1)) * width / 100
-        let projectileY = parseFloat(document.getElementById("projectile").style.top.slice(0, -1)) * height / 100
 
+        //Sets projectile starting point to start
+        let projectileCurrentX = parseFloat(document.getElementById("firing-point").style.left.slice(0, -1)) * width / 100
+        let projectileCurrentY = parseFloat(document.getElementById("firing-point").style.top.slice(0, -1)) * height / 100
+
+        //variables for firing math
+        let xToTarget = targetXPos - projectileCurrentX
+        let yToTarget = targetYPos - projectileCurrentY
         let gravity = 3
-        let fireSpeed = 20
+        let xSpeed = 20
+        let ySpeed = 0
 
-        //math for choosing firing angle
 
-        //while (projectileX >= targetXPos - 1 && projectileX < targetXPos + 5 && projectileY >= targetYPos - 1 && projectileY < targetYPos + 5) {
 
-        //}
+        while (projectileX >= targetXPos - 1 && projectileX < targetXPos + 5 && projectileY >= targetYPos - 1 && projectileY < targetYPos + 5) {
+          projectileCurrentX += xSpeed
+          projectileCurrentY += ySpeed
+          ySpeed += gravity
+          document.getElementById("projectile").style.left = projectileCurrentX + "px"
+          document.getElementById("projectile").style.bottom = projectileCurrentY + "px"
+        }
       }
     },
   }
@@ -59,8 +69,8 @@
   }
 
   #projectile {
-    left: 10%;
-    bottom: 97%;
+    left: 0%;
+    top: 97%;
     background-color: rgb(68, 0, 255);
   }
 
