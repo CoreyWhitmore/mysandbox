@@ -1,6 +1,6 @@
 <template>
-  <div class="parabolictargeting container-fluid flex-grow-1">
-    test
+  <div class="parabolictargeting flex-grow-1 bg-light">
+
   </div>
 </template>
 

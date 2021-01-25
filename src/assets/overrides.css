@@ -1,6 +1,5 @@
-.fillpage {
-  flex-grow: 1;
-  border-style: solid;
+.min-vh-100{
+  min-height: 100vh;
 }
 /*Standard Vue css*/
   #app {
