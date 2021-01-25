@@ -1,11 +1,6 @@
 <template>
-  <div class="parabolictargeting container-fluid">
-    <div class="row">
-      <div class="d-flex loading-component justify-content-center m-2">
-        <canvas id="animationCanvas" class="parabolic-targeting">
-        </canvas>
-      </div>
-    </div>
+  <div class="parabolictargeting container-fluid flex-grow-1">
+    test
   </div>
 </template>
 
@@ -14,8 +9,12 @@
     name: 'ParabolicTargeting',
     data() {
       return {
-
+        set: false,
+        fired: false,
       }
-    }
+    },
+    methods: {
+
+    },
   }
 </script>
